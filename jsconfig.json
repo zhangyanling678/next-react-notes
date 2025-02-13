@@ -4,6 +4,7 @@
     "paths": {
       "@/actions": ["app/[lng]/actions.js"],
       "@/*": ["./*"],
+      "auth": ["./auth"]
     }
   }
 }

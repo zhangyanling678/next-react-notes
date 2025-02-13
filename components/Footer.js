@@ -3,7 +3,7 @@ import { Trans } from "react-i18next/TransWithoutContext";
 import { locales } from "@/config.js";
 import { useTranslation } from "@/app/i18n";
 
-export const Footer = async ({ lng }) => {
+export default async function Footer({ lng }) {
   const { t } = await useTranslation(lng, "footer");
   return (
     <footer style={{ margin: 20 }}>
@@ -22,4 +22,4 @@ export const Footer = async ({ lng }) => {
         })}
     </footer>
   );
-};
+}

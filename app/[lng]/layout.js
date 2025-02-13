@@ -2,7 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 // import "./globals.css";
 import "./style.css";
 import Sidebar from "@/components/Sidebar";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { locales } from "@/config";
 
 export async function generateStaticParams() {
@@ -30,12 +31,15 @@ export default async function RootLayout({ children, params }) {
     <html lang={lng}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="container">
+          <Header />
           <div className="main">
-            <Sidebar lng={lng} />
+            <section>
+              <Footer lng={lng} />
+              <Sidebar lng={lng} />
+            </section>
             <section className="col note-viewer">{children}</section>
           </div>
         </div>
-        <Footer lng={lng} />
       </body>
     </html>
   );
